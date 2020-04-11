@@ -1,0 +1,4 @@
+一、Server-Sent事件-单向消息传递
+    指的是网页自动获取来自服务器的更新
+二、接收Server-Sent事件通知
+    EventSource对象用于接收服务器发送事件通知

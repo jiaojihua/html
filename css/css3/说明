@@ -1,0 +1,39 @@
+边框
+    边框属性
+        border-radius:25px;
+        相当于：
+            border-top-left-radius:2em;
+            border-top-right-radius:2em;
+            border-bottom-right-radius:2em;
+            border-bottom-left-radius:2em;
+        border-radius:
+            border-radius: 2em 1em 4em / 0.5em 3em;
+
+            is equivalent to:
+
+            border-top-left-radius: 2em 0.5em;
+            border-top-right-radius: 1em 3em;
+            border-bottom-right-radius: 4em 0.5em;
+            border-bottom-left-radius: 1em 3em;
+        每个半径的四个值是左上角，右上角，右下角，左下角。如果省略左下角，右上角是相同的。如果省略右下角，左上角是相同的
+        如果省略右上角，左上角是相同的
+        50%代表椭圆
+    border-shadow：10px 10px 5px #888;
+    border-image
+        -webkit-border-image: url(border.png) 30 round; /* Safari 3.1-5 */
+        -o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+        border-image: url(border.png) 30 round;
+        语法：border-image:source slice width outset repeat|initial|inherit;
+            border-image-source-指定要用于绘制边框的图像的位置
+            border-image-slice-图像向边界内偏移
+            border-image-width-指定图像边界的宽度
+            border-image-outset-用于指定在边框外部绘制border-image-area的值
+            border-image-repeat 用于设置图像边界是否就重复repeat,拉伸stretch或铺满round
+背景
+    background-image(可添加多个背景)
+    如background-image:url(1) top left no-repeat,url(2) bottom right no-repeat;
+    background-size:指定背景图片的大小
+    background-origin:指定了背景图像的位置区域
+        content-box,padding-box,border-box
+    
+

@@ -1,0 +1,16 @@
+HTML5 新的INPUT类型
+color
+    用于在input字段主要用于选取颜色
+date
+datetime
+datetime-local
+email
+month
+number
+range
+search
+tel
+time
+url
+week
+

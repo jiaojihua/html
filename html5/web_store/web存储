@@ -1,0 +1,20 @@
+h5 web存储，是一个比cookie更好的本地存储方式
+
+1、什么是web存储
+    使用h5 web存储可以在本地存储用户的浏览数据
+    相比cookie,web存储更加安全与快速，这些数据只用于用户请求网站数据上，它可以存储大量的数据，而不影响网站的性能
+    数据以键值对存在，web网页的数据只允许该网页访问使用
+
+2、客户端存储数据的两个对象为:
+    localStorage:长久保存整个网站的数据，没有过期时间，除非手动删除
+    sessionStorage：临时保存同一窗口的数据，在关闭窗口或标签页之后将会删除这些数据
+
+3、在使用web存储前，需要检查浏览器是否支持
+    if(typeof(Storage)!=="undefined")
+4、常用的API
+    保存数据：localStorage.setItem(key,value)
+    读取数据：localStorage.getItem(key)
+    删除单个数据：localStorage.removeItem(key)
+    删除所有数据：localStorage.clear()
+    得到某个索引的key:localStorage.key(index)
+

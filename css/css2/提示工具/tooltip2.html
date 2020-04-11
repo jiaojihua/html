@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提示工具</title>
+    <style>
+        body{
+            text-align:center;
+        }
+        /*tooltip容器*/
+        .tooltip{
+            position:relative;
+            display:inline-block;
+            border-bottom:1px dotted black;
+        }
+
+        /*悬停文本*/
+        .tooltip .tooltiptext{
+            visibility:hidden;
+            width:120px;
+            background-color:black;
+            color:#fff;
+            text-align:center;
+            padding:5px 0;
+            border-radius:6px;/*边框添加圆角*/
+            margin-left:-60px;
+            left:50%;
+            bottom:100%;
+
+            position:absolute;
+            z-index:1;
+
+            /*淡入淡出效果*/
+            opacity:0;
+            transition:opacity 1s;
+        }
+
+        /*鼠标移动上后显示提示框*/
+        .tooltip:hover .tooltiptext{
+            visibility:visible;
+
+            /*淡入淡出效果*/
+            opacity:1;
+
+        }
+
+        /*添加箭头*/
+        .tooltip .tooltiptext::after{
+            content:" ";
+            position:absolute;
+            top:100%;
+            left:50%;
+            margin-left:-5px;
+            bordor-width:5px;
+            border-style:solid;
+            border-color:black transparent transparent transparent;
+
+        }
+
+    </style>
+
+</head>
+<body>
+<h1>在上面的提示文本</h1>
+<div class="tooltip">鼠标移动到这
+
+    <span class="tooltiptext">提示文本</span>
+</div>
+
+</body>
+</html>

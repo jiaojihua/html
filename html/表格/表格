@@ -1,0 +1,13 @@
+caption元素-描述表格的标题
+colspan-单元格跨两列
+rowspan-单元格跨两行
+border-表格的边框
+cellpadding-单元格边距
+cellspacing-单元格间距
+th-定义表格的表头
+tr-定义表格的行
+colgroup-定义表格列的组
+col-定义用于表格列的属性
+thead-定义表格的页眉
+tbody-定义表格的主体
+tfoot-定义表格的页脚

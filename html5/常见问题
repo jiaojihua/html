@@ -1,0 +1,15 @@
+1、为什么使用html5?
+   html5是html最新的修订版本，其目的是为了在移动设备上支持多媒体
+2、html5新的特性：
+    用于绘画的canvas元素
+    用于媒介回放的video和audio元素
+    对本地离线存储的更好的支持
+    新的特殊内容元素：如article、footer、header、nav、section
+    新的表单特性，如calendar、date、time、url、search
+3、浏览器支持问题
+    现代的浏览器都支持html5
+    此外，现在的浏览器对不认识的元素都会作为内联元素处理
+    因此，可以教会浏览器处理不认识的元素
+    方法：将html5元素定义为块元素
+        html5定义了8个新的html主义元素，所有这些元素都是块级元素,因此可以设置css的display属性
+        header,section,footer,aside,nav,main,article,figure{display:block;}

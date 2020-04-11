@@ -1,0 +1,339 @@
+JavaScript
+用法：
+    在head标签中，在body标签中，在外部文件中
+输出
+    window.alert()
+    document.write()
+    innerHTML=
+    console.log()
+语法
+    Number字面量
+    字符串字面量
+    表达式字面量
+    数组字面量
+    对象字面量
+    函数字面量
+
+    变量var
+    语句用;结束语句（;是可选的，不是必须）
+    注释用//
+    数据类型Number,String,Array,Object
+    javascript大小写敏感
+
+    javascript会忽略空格
+    可使用反斜杠对文本折行
+    常用语句标识符
+        break,catch,continue,do..while,for,for..in,function,if..else,return,switch,throw,try,var,while
+
+注释
+    单行注释//
+    多行注释 /*  */
+变量
+    一个好的编程习惯是，在代码开始处就统一对需要的变量进行声明
+    可以在一条语句中声明多个变量，中间用，分隔
+    不可以多个值赋同一个值，这样做的结果是最后一个赋值了，前面的没有
+    重新声明变量后，变量的值不会丢失
+数据类型
+    基本类型：String,Number,Boolean,Null,Undefined,Symbol
+    引用数据类型：Object,Array,Function
+    javascript拥有动态类型，这表示相同的变量可以表示不同的类型
+    undefined表示变量不含有值
+    可以通过将变量的值设为null来清空变量
+    声明新的变量时，可以使用关键词new
+对象
+    对象是包含属性和方法的数据
+    javascript对象是变量的容器
+    对象的定义
+        1、使用字符来定义和创建
+           var person = {firstName:"John",lastName:"Doe",age:50};
+        2、访问属性
+            person.firstName或 person["firstName"]
+        3、访问方法
+            var name = person.fullName();
+            当方法后不加括号的时候，代表是要访问函数表达式本身
+
+函数
+    function functionname(){
+        //执行代码
+    }
+    带参数的函数
+    function functionname(var1,var2...){
+        //执行代码
+    }
+    带返回值的方法
+    function functionname(){
+        //执行代码
+        return..(不一定非要有返回值，没有只代表这里程序会退出)
+    }
+    函数只是函数，不会自己执行，除非你调用它
+    如：var myVar = myfunction(var..);
+    局部变量：在函数中声明的变量，在函数执行后被删除
+    全局变量：在函数外声明的变量，在页面关闭后被删除
+    给未声明的变量分配值，此变量将自动作为window的一个属性
+    *非严格模式下给未声明变量赋值创建的全局变量，是全局对象的可配置属性，可以删除
+事件
+    html事件是发生在html元素上的事情，当在html页面中使用javascript时，javascript可以使用这些事件
+    html事件可以是浏览器事件，也可以是用户行为
+    如html页面加载完成，input字段改变时，html按钮被点击
+    常见的html事件如下：
+        onchange-元素改变
+        onclick-用户点击元素
+        onmouseover-在元素上移动鼠标
+        onmouseout-从一个元素上移开鼠标
+        onkeydown-用户按下键盘按键
+        onload-浏览器已完成页面的加载
+
+    Date()方法返回当前时间
+    this指代自身
+字符串
+    var character = "hello world"
+    可以访问单个字符，var char = character[2],索引从0开始
+    length属性：计算字符串的长度
+    特殊符号的转义：使用\
+    字符串可以通过new来创建对象，但是不建议这样做，因为这样会拖慢速度，还可能产生其他的副作用
+    字符串的属性和方法：
+        原始的字符串，即通过var str = "";方法得到的，是没有属性和方法的，因为这不是对象
+        原始值可以使用javascript的属性和方法，是因为javascript在执行方法和属性时可以把原始值当作对象
+        属性：
+            constructor
+            length
+            prototype
+        方法：
+            charAt()
+            charCodeAt()
+            concat()
+            fromCharCode()
+            indexOf()
+            lastIndexOf()
+            localCompare()
+            match()
+            replace()
+            search()
+            slice()
+            split()
+            substr()
+            substring()
+            toLocaleLowerCase()
+            toLocaleUpperCase()
+            toLowerCase()
+            toString()
+            toSupperCase()
+            trim()
+            valueOf()
+运算符
+    支持++ --
+    字符串支持+拼接字符串
+    数字与字符串相加时，会将数字转换成字符串，进而进行字符串拼接操作
+
+    !=不等于
+    && || ！
+    条件运算符：condition?value1:value2
+
+条件
+    if(condition){
+
+    }else if(){
+
+    }else{
+
+    }
+    Math.random()生成随机数
+
+    switch(value){
+        case 1:
+            //
+            break;
+        case 2:
+             //
+            break;
+        ...
+        default:
+            //
+            break;
+    }
+循环
+    for循环
+    for(var i=0; i<=12; i++){
+
+    }
+    for(x in person){
+
+
+    }//这种循环针对的是对象
+    while(condition){}
+    do{}while(condition);
+    
+typeof
+    使用typeof来检测变量的数据类型，用法typeof vararguemnt
+    null是一个空值对象
+    数组是一种特殊的对象
+    undefined是一个没有值的变量，其类型是undefined
+    null和undefined类型不同，但是值相等
+类型转换
+    Number()转换成数字
+    String()转换成字符串
+    Boolean()转换成布尔
+    javascript中有6种不同的数据类型
+        string
+        number
+        boolean
+        object
+        function
+        symbol
+    3种对象类型
+        Object
+        Date
+        Array
+    2种不包含任何值的数据类型
+        null
+        undefined
+    typeof NaN返回Number
+    constructor属性：返回所有javascript变量的构造函数
+    .toString()转换成字符串表示
+    indexOf()
+    myDate.constructor.toString().indexOf("Date")>-1
+    1、将数字转换成字符串：String(),.toString()
+      Number方法：toExponential()把对象转换成指数计算法
+        toFixed()把数字转换为字符串，结果的小数点位有指定的位数
+        toPrecision()把数字格式化为指定的长度
+    2、将布尔值转换成字符串
+      String(false)
+      String(true)->"true"
+      Boolean方法toString()方法也有同样的效果
+    3、将日期转换成字符串
+      Date()返回字符串
+      全局方法String(new Date())可以将日期对象转换成字符串
+      Date方法toString()方法也有同样的效果
+      Date方法：
+        getDate() 返回一个月中的某一天（1-31）
+        getDay() 返回一周中的某一天（0--6）
+        getFullYear() 以四位数返回年份
+        getHours() 小时 0-23
+        getMilliseconds() 毫秒 0-999
+        getMinutes() 分钟 0-59
+        getMonth() -月 0-11
+        getSeconds()秒数 0-59
+        getTime() -从1970.1.1到现在的毫秒数
+    4、字符串转换成数字
+      全局方法Number()可以将字符串转换成数字
+        数字转换成数字
+        空值转换成0
+        非数字转换成NaN
+      Number方法中还有方法
+        parseFloat()
+        parseInt()
+      一元运算符+
+        var y = '5'
+        var x = +y; x是数字
+    5、布尔值转换成数字
+        Number(false) = 0,Number(true)=1
+    6、日期转换成数字
+        Number(new Date()) 与 getTime()相同
+正则表达式
+    使用单个字符串来描述、匹配一系列符合某个语法规则的字符串搜索模式
+    搜索模式可用来文本搜索或文本替换
+    什么是正则表达式
+        正则表达式是一由一个字符序列形成的搜索模式
+    语法：/正则表达式/修饰符（可选）
+    在javascript中，正则表达式常用于字符串的两个方法中，search(),replace()
+        search()方法返回第一个匹配到的起始位置，可以使用字符串参数，参数会自动转换成正则表达式
+        如果没有匹配到，则会返回-1
+        replace()方法返回替换后的结果，如果没有完成替换，返回原字符串。同样参数也可以用字符串
+    正则表达式修饰符：
+        i 执行忽略大小写的搜索
+        g 执行全局匹配，而不是只匹配第一个
+        m 执行多行匹配
+    正则表达式模式：
+        表达式
+            [abc] 查找方括号之间的任何字符
+            [0-9] 查体任何从0-9的字符
+            (x|y) 查找任何以|分隔的选项
+        元字符（拥有特殊含义的字符）
+            \d 查找数字
+            \s 查找空白字符
+            \b 匹配单词边界
+            \uxxxx 查找以十六进制数xxxx规定的unicode字符
+        量词
+            n+ 匹配任何包含至少一个n的字符串
+            n* 匹配任何包含零个或多个n的字符串
+            n? 匹配任何包含零个或一个n的字符串
+    使用RegExp对象
+        在javascript中，RegExp对象是一个预定义了属性和方法的正则表达式对象
+        test()方法是一个测试方法，作用是检测一个字符串是否匹配某个模式，如果字符串中包含匹配的文本，返回true
+            var par = new RegExp('e');
+            par.test(str);
+        exec()方法是一个正则表达式方法，用于检索字符串中的正则表达式的匹配，返回结果是一个数组，未匹配返回null
+    正则表达式例子：
+        数字、字母、下划线组成：/^\w+$/
+        全部是字母 ^[a-zA-Z]+$
+        全部是数字 ^\d+$
+        是否带有小数 ^\d+\.\d+$
+        是否由中文名称组成 ^[u4E00-\u9FA5]{2,4}$
+        是否由8位数字组成 ^\[0-9]{8}$
+        电话号码格式 ^((0\d{2,3}-\d{7,8})|(a[3584]\d{9}))$
+
+错误
+    try{
+        throw "";
+    }catch(e){
+        e.message
+    }finally{
+
+    }
+调试
+    console.log()方法
+    设置断点
+    debugger关键字，与断点的效果一样的
+变量提升
+    函数声明与变量声明总是被解释器悄悄地提升到方法体的顶端
+    所以变量可以先使用再声明，与先声明再使用是一样的
+    然而，初始化的变量是不会提升的
+    一种比较好的习惯是，不管有没有变量提升这回事，我们都在作用域开始前声明变量，这是一个好的习惯
+严格模式
+    “use strict”声明
+    在严格模式下，
+        不允许使用未声明的变量
+        对象也是一个变量，不声明的话是无法使用的
+        不允许删除变量或对象
+        不允许删除函数
+        不允许使用八进制
+        不允许使用转义字符
+        不允许对只读属性赋值
+        不允许删除一个不允许删除的属性
+        变量名不能使用eval字符串
+表单验证
+    document.forms[formname][inputname].value
+约束验证
+    h5增加的验证方式constraint validation,是表单提交时浏览器用来实现验证的一种算法
+    html约束验证基于：html输入属性，css伪类选择器，dom属性和方法
+    约束验证html输入属性
+        disabled
+        max
+        min
+        pattern
+        required
+        type
+    约束验证css伪类选择器
+        :disabled
+        :invalid
+        :optional
+        :required
+        :valid
+json
+    json是用于存储和传输数据的格式，通常用于服务端向网页端传递数据
+    json使用javascript语法，但是json格式仅仅是一个文本
+    json语法规则：
+        数据为键值对
+        数据由分号分隔
+        大括号保存对象
+        方括号保存数组
+    json字符串转换成javascript对象
+        使用javascript内置函数json.parse()
+        var obj = JSON.parse(jsonstr);
+    将javascript对象转换成json字符串
+        JSON.stringify()
+
+
+
+
+

@@ -1,0 +1,4 @@
+1、从pywebsocket下载mod_pywebsocket（git clone https://github.com/google/pywebsocket.git）
+2、将mod_pywebsocket复制到Lib/sitepackages中
+3、执行python standalone.py -p 9998 -w ../example/
+此命令会开启一个端口为9998的服务，使用-w来设置处理程序echo_wsh.py所在的目录

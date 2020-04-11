@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取网页访问次数</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    if(typeof(Storage)!=="undefined"){
+        if(sessionStorage.count){
+            sessionStorage.count = Number(sessionStorage.count)+1;
+        }else{
+            sessionStorage.count = 1;
+        }
+
+        document.getElementById("result").innerHTML = "此网页已被访问了"+sessionStorage.count+"次。";
+    }else{
+        document.getELementById("result").innerHTML="您的浏览器不支持web存储"
+    }
+</script>
+</body>
+</html>

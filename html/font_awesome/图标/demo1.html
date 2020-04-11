@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Font Awesome图标</title>
+    <!-- 加载样式文件 -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+<body>
+<!-- 使用前缀fa与图标的名称来放置图标 i与span常与图标一起使用，图标颜色大小与容器的字体颜色大小保持一致-->
+<i class="fa fa-car"></i>
+<i class="fa fa-car" style="font-size:48px;"></i>
+<i class="fa fa-car" style="font-size:60px; color:red;"></i>
+<!-- fa-lg增加33%，fa-2x等用于增加相对于其容器的图标大小 -->
+<i class="fa fa-car fa-lg"></i>
+<i class="fa fa-car fa-2x"></i>
+<i class="fa fa-car fa-3x"></i>
+<i class="fa fa-car fa-4x"></i>
+<i class="fa fa-car fa-5x"></i>
+<!-- fa-ui 与 fa-li 用于替换无序列表中的默认前缀 -->
+<ul class="fa-ul">
+    <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+    <li><i class="fa-li fa fa-spinner fa-spin"></i>List icons</li>
+    <li><i class="fa-li fa fa-square"></i>List icons</li>
+</ul>
+<!-- fa-border,fa-pull-right,fa-pull-left用于拉式引用或文章图标 -->
+<i class="fa fa-quote-right fa-4x fa-pull-right fa-border" style="color:blue;"></i>
+草原老鹳草大起大落苦开荆巧夺天工事巧夺天工腺苞蒲儿根苦 <br>
+草原老鹳草大起大落苦开荆巧夺天工事巧夺天工腺苞蒲儿根苦 <br>
+草原老鹳草大起大落苦开荆巧夺天工事巧夺天工腺苞蒲儿根苦 <br>
+草原老鹳草大起大落苦开荆巧夺天工事巧夺天工腺苞蒲儿根苦 <br>
+<!-- fa-spin可以让图标旋转 fa-pulse可以让图标以8步为周期进行旋转 -->
+<i class="fa fa-spinner fa-spin"></i>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<i class="fa fa-refresh fa-spin"></i>
+<i class="fa fa-cog fa-spin"></i>
+<i class="fa fa-spinner fa-pulse"></i>
+<i class="fa fa-bus fa-spin"></i>
+<br>
+<!-- fa-rotate用于旋转图标，fa-flip用于翻转图标 -->
+<i class="fa fa-shield"></i>
+<i class="fa fa-shield fa-rotate-90"></i>
+<i class="fa fa-shield fa-rotate-180"></i>
+<i class="fa fa-shield fa-rotata-270"></i>
+<i class="fa fa-shield fa-flip-horizontal"></i>
+<i class="fa fa-shield fa-flip-vertical"></i>
+<!-- 要堆叠多个图标，要使用父级上的fa-stack类，fa-stack-1x用于常规大小的图标，fa-stack-2x用于较大的图标，fa-inverse用于替代图标颜色 -->
+<span class="fa-stack fa-lg">
+    <i class="fa fa-circle-thin fa-stack-2x"></i>
+    <i class="fa fa-twitter fa-stack-1x"></i>
+</span>
+fa-twitter on fa-circle-thin <br>
+<span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</span>
+fa-twitter (inverse) on fa-circle <br>
+<span class="fa-stack fa-3x">
+    <i class="fa fa-camera fa-stack-1x"></i>
+    <i class="fa fa-ban fa-stack-2x text-danger" style="color:red;"></i>
+</span>
+fa-ban on fa-camera <br>
+
+<div class="list-group">
+    <a href="#" class="list-group-item"><i class="fa fa-home fa-fw"></i>Home </a>
+    <a href="#" class="list-group-item"><i class="fa fa-book fa-fw"></i>Library </a>
+    <a href="#" class="list-group-item"><i class="fa fa-pencil fa-fw"></i>Application</a>
+    <a href="#" class="list-group-item"><i class="fa fa-cog fa-fw"></i>Settings </a>
+</div>
+</body>
+</html>

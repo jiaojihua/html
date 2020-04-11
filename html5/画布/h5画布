@@ -1,0 +1,136 @@
+html5的canvas标签用于绘制图像，不过它本身并没有绘制能力，而是要依赖JavaScript来绘制
+getContext（）返回一个对象，这个对象提供了用于在画布上绘图的方法和属性，如线、圆、方、文本
+
+一、颜色、样式、阴影
+    fillStyle-设置或返回用于填充绘画的颜色、渐变或模式
+        fillStyle属性的默认值为#000000;
+        用法为：context.fillStyle=color/gradient/pattern
+        属性值为：color-指绘图填充的css颜色值，默认为#000000
+                gradient-用于填充绘图的渐变对象（对象或放射性）
+                pattern-用于填充绘图的pattern对象
+    strokeStyle-设置或返回用于笔触的颜色、渐变或模式
+        用法与fillStyle相同
+    shadowColor-设置或返回用于阴影的颜色
+    shadowBlur-设置或返回用于阴影的模糊级别
+    shadowOffsetX-设置或返回阴影与形状的水平距离
+    shadowOffsetY-设置或返回阴影与形状的竖直距离
+    shadowColor属性与shadowBlur属性一直使用创建阴影
+    shadowOffsetX与shadowOffsetY属性一起使用来调整阴影效果
+
+    lineWidth-此属性表示线宽
+
+二、方法
+    createLinearGradient()-创建线性渐变（用于画布内容上）
+        渐变可用于填充矩形、圆形、线条和文本等
+    createPattern()-在重复的方向上重复指定的元素
+        元素可以是视频、元素或其他canvas元素
+        可重复的元素可用来填充绘制填充矩形圆形或线条等
+    createRadialGradient()-创建放射性或环状的渐变（用于画布内容上）
+        6个参数，每三个一组，代表圆心的坐标及半径。第一个为渐变的开始圆，第二个为渐变的结束圆
+    addColorStop()-规定渐变对象中的颜色和停止位置
+
+三、线条样式
+    lineCap-设置或返回线条的结束端点样式
+        设置或返回线条末端线帽的样式，round/square会使线条略微变长，还有一个参数为butt
+        butt 平直边缘,默认
+        round 圆形线帽
+        square 方形线帽
+    lineJoin-设置或返回两条线相交时，所创建的拐角类型
+        bevel 创建斜角
+        round 创建圆角
+        miter 默认，创建尖角
+    lineWidth-设置或返回当前的线条宽度
+        以像素为单位
+    miterLimit-设置或返回最大斜接长度
+        lineJoin为miter时，此属性起作用，大于设置的值时，采用level方式显示
+四、矩形
+    rect()-创建矩形
+        创建矩形，四个参数，前两个代表左上角坐标，后两个代表宽高
+        创建后要调用fill()或stroke()方法实际绘制图形
+    fillRect()-创建被填充的矩形
+        context.fillRect(x,y,width,height)
+    strokeRect()-绘制矩形
+        context.strokeRect(x,y,width,height)
+    clearRect()-在给定的矩形内清除指定的像素
+        context.clearRect(x,y,width,height);
+五、路径
+    fill()-绘制当前绘图
+    stroke()-绘制已定义的路径
+        实际绘制出moveTo()与lineTo()方法定义的路径
+    beginPath()-开始一条路径或重置当前路径，使用moveTo(),lineTo(),quadricCurveTo(),bezierCurveTo(),arc(),arcTo()来创建路径
+        最后要须调用stroke()来实际绘制路径
+    moveTo()-把路径移动到指定的位置，不创建线条
+        context.moveTo(x,y)
+    closePath()-创建从当前点到开始点的路径，即封闭
+    lineTo()-添加一个新点，然后创建从该点到画布中最后指定的点的线条
+    clip()-从原始画布中剪切任意形状和尺寸，之后所有的绘图都被限制在剪切区域中
+        当然，可以在clip()之前使用save()方法对当前画布区域进行保存，并在以后的任意时间通过restore()恢复
+    quadraticCurveTo()-通过使用表示二次贝赛尔曲线的指定控制点，向当前路径添加一个点
+        二次贝赛尔需要两个点，第一个点是用于二次贝赛尔计算的控制点，第二个点是曲线的终点，曲线的第一个点是当前路径的最后
+        一个点，如果路径不存在，则用beginPath(),moveTo()方法来定义开始点
+        context.quadraticCurveTo(cpx,cpy,x,y)
+    bezierCurveTo()-通过使用表示三次贝赛尔曲线的控制点，向当前路径添加一个点
+        三次贝赛尔曲线需要三个点，前两个点是控制点，第三个是曲线终点
+        context.bezierCurveTo(cpx1,cpy1,cpx2,cpy2,x,y)
+    arc()-创建孤或曲线
+        context.arc(x,y,r,sAngle,eAngle,counterclockwise)
+        如果要创建圆，则起始角度为0，结束角度为2*Math.PI,最后一个参数True表示逆时针，为可选参数
+    arcTo()-创建两条切线之间的弧或曲线
+        context.arcTo(x1,y1,x2,y2,r)
+    isPointInPath()-context.isPointInPath(x,y)返回true或false
+六、转换
+    scale()-缩放当前绘图
+        context.scale(scalewidth,scaleheight)
+        如果对绘图进行绽放，则以后的绘图也会缩放，定位也会被缩放
+    rotate()-旋转当前绘图
+        旋转只会影响旋转完成后的绘图
+    translate()-重新映射画布上的零点，相当于重置坐标系
+    transform()-替换当前的变换矩阵，即transform()允许旋转、缩放、移动当前环境
+        context.transform(a,b,c,d,e,f)a,d-缩放，b,c-旋转，e,f-移动
+    setTransform()-重置前一个变换矩阵然后构建新的矩阵
+七、文本
+    font-设置或返回文本内容的当前字体属性
+        context.font="italic small-caps bold 12px arial"
+        font-style  规定字体样式，可选值为normal,italic,oblique
+        font-variant 规定字体变体，可选值为normal,small-caps
+        font-weight 规定字体的粗细，可选值为：normal,bold,bolder,lighter,100-900
+        font-size/line-height 规定字高和行高，以像素计
+        font-family 规定字体系列
+        caption-
+        icon
+        menu
+        message-box
+        small-caption
+        status-bar
+    textAlign-设置或返回文本内容的当前对齐方式
+        context.textAlign="start|end|center|left|right"
+    textBaseline-设置或返回在绘制文本时使用的当前文本基线
+        context.textBaseline="alphabetic|top|hanging|middle|ideographic|bottom"
+    fillText()-在画布上绘制被填充的文本
+        context.fillText(text,x,y,maxwidth),最后一个可选
+    strokeText()-在画布上绘制文本
+    measureText()-返回包含指定文本宽度的对象
+        context.measureText(text).width 返回的对象包含指定字体的宽度，以像素计
+八、图像绘制
+    drawImage()-向画布上绘制图像、画布或视频
+        context.drawImage(img,[sx,sy,swidth,sheight,]x,y[,width,height])
+        s 代表剪切
+        最后两个参数可用于图像的缩放
+    width-返回ImageData对象的宽度
+        imageData.width
+    height-返回ImageData对象的高度
+    data-返回一个对象，其包含指定的ImageData对象的图像数据
+        ImageData对象的每个像素，都存着四个方面的信息，即RGBA，a代表alpha通道，255完全可见，0透明
+    createImageData()-创建新的空白的ImageData对象
+        context.createImageData(width,height)-以指定的尺寸（像素）创建新的imageData对象
+        context.createImageData(imageData)-创建与另一个imageData对象尺寸相同的imageData对象，不复制图像数据
+    getImageData()-返回ImageData对象，此对象拷贝了指定矩形的像素数据
+        context.getImageData(x,y,width,height)
+    putImageData()-把图像数据放在画布上
+
+    globalAlpha-设置或返回当前透明度0-1，完全透明-不透明
+    globalCompositeOperation-设置或返回将一个新的图像绘制到已有图像上
+        context.globalCompositeOperation=""
+        可选的参数为：source-over(默认)，source-atop,source-in,source-out
+            destination-over,destination-atop,destination-in,destination-out
+            lighter,copy,xor

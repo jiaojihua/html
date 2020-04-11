@@ -1,0 +1,377 @@
+什么是CSS?
+    Cascading Style Sheets 层叠样式表
+    样式定义如何显示html元素
+    样式通常存储在样式表中
+    为解决内容与表现分离的问题，使用了样式表
+    外部样式表可以提高效率
+    外部样式表通常存储在CSS文件中
+    多个样式可层叠为一个
+CSS语法
+    css规则由两个部分组成，选择器+n个声明
+    选择器是需要改变样式的html元素
+    声明由一个属性和一个值组成，由冒号分开
+    注释 /* */
+id选择器与类选择器
+    #id-id---不要以数字开头，因为有的浏览器不起作用。唯一性
+    .class---一组，类的第一个也不能是数字
+背景
+    background-color
+        元素的背景是元素的总大小，包括填充和边界，但是不包含边距
+        在css中，有三种方式定义颜色，十六进制-#ffffff;RGB-rgb(255,0,0);颜色名称-red
+        background-color:参数如下
+            默认值-transparent,透明;inherit-从父元素继承;color-指定颜色
+    background-image
+        background-image:参数如下
+            url('')
+            none-默认
+            linear-gradient()-创建一个线性渐变，从上到下
+                linear-gradient(direction,color-stop1,color-stop2,color-stop2)
+                如linear-gradient(red,yellow,blue)
+                  linear-gradient(to right,red,yellow)
+                  linear-gradient(to bottom right,red, yellow)
+                  linear-gradient(180deg,red,yellow)
+                  linear-gradient(to right,rgba(255,0,0,0),rgba(255,0,0,1))
+            radial-gradient()-用径向渐变创建图像
+                radial-gradient(shape,size,position,color-stop...)
+                    shape-确定圆的类型，ellipse-椭圆默认，circle
+                    size-定义渐变的大小
+                        farthest-corner--默认，指定径向渐变的半径长度从圆心到离圆心最远的角
+                        closest-side--从圆心到离圆心最近的边
+                        closest-corner--从圆心到离圆心最近的角
+                        farthest-side-从圆心到离圆心最远的边
+                    position-定义渐变的位置
+                        center-默认，设置中间为径向渐变圆心的纵坐标值
+                        top
+                        bottom
+                如：
+                    radial-gradient(red 5%,green 15%,blue 60%)-颜色结点不均匀分布
+                    radial-gradient(circle, red,green,blue)
+                    radial-gradient(farthest-side at 60% 55%,red,yellow,black)
+                    其中的百分数代表颜色占比
+
+            repeat-linear-gradient()
+                    repeat-linear-gradient(angle,to side or corner,color-stop)
+                        angle-默认180deg
+                        side or corner-指线性渐变的起始位置，第一个left/right,第二个top/bottom
+            repeat-radial-gradient()
+            inherit
+    background-repeat
+        repeat
+        repeat-x
+        repeat-y
+        no-repeat
+        inherit
+    background-attachment
+        scroll-默认，随页面的滚动而滚动
+        fixed-固定
+        local-随着元素内容的滚动而滚动
+        initial-设置默认值
+        inherit
+    background-position
+        left top
+        left center
+        left bottom
+        center top
+        center center
+        center bottom
+        right top
+        right center
+        right bottom
+        如果只指定一个，则另一个默认为center
+        x% y% 第一个代表水平，第二个代表竖直，默认0% 0%，如果指定其中一个，另一个为50%
+
+        xpos ypos  单位为像素或其他css单位，如果只指定其中一个，另一个为50%
+
+文本
+    文本颜色-color
+    文本方向-direction,默认参数是ltr(左到右)，还有两个个是rtl,inherit
+    字符间距-letter-spacing,默认为normal，length值可以是负的
+    行间距-line-height,
+        默认normal,
+        number,与当前字体尺寸相乘来设置行距
+        length,设置固定的行间距
+        %，基于当前字体尺寸的百分比设置行距
+        inherit
+    文本对齐方式:text-align
+        left-默认
+        right
+        center
+        justify-两端对齐
+        inherit
+    文本装饰-text-decoration
+        none,默认
+        underline
+        overline
+        line-through
+        blink
+        inherit
+        后面还可以加颜色，如red，wavy波浪，dotted点
+    文本缩进 text-indent
+        length-默认值为0，可以是负值
+        % 基于父元素宽度的百分比的缩进
+        inherit
+    阴影效果 text-shadow
+        text-shadow:h-shadow v-shadow blur color
+            h-shadow-水平阴影位置，允许负值
+            v-shadow-竖直阴影位置，允许负值
+            blur-可选，模糊的距离
+            color-可靠，阴影的颜色
+    文本大小写：text-transform
+        none-默认
+        capitalize-开头大写
+        uppercase
+        lowercase
+        inherit
+    *?unicode-bidi属性
+        normal-默认
+        embed-创建一个附加的嵌入层面
+        bidi-override-创建一个附加的嵌入层面，重新排序取决于direction属性
+        initial-设置该属性为它的默认值
+        inherit
+    竖直对齐 vertical-align
+        baseline:默认，放置父元素的基线上
+        sub 垂直对齐文本下标
+        supper 垂直对齐文本上标
+        top 把元素的顶端对齐与行中最高元素的顶端对齐
+        text-top 把元素的顶端与父元素的顶端对齐
+        middle 把元素放置在父元素的中间
+        bottom 把元素的底端与行中最低元素的顶端对齐
+        text-bottom 把元素的底端与父元素的底端对齐
+        length
+        %
+        inherit
+    空白处理 white-space
+        normal-默认，浏览器会忽略空白
+        pre-空白被保留
+        nowrap-文本不会换行，直到遇到br
+        pre-wrap--保留空白并正常换行
+        pre-line--合并空白符序列，但是保留换行符
+        inherit
+    字间距 word-spacing
+        normal -默认
+        length
+        inherit
+字体-定义字体，加粗，大小，文本样式
+    在CSS中，有两种类型的字体系列名称
+        通用字体系列
+            拥有相似外观的字体系统组合，如Serif或Monospace
+        特定字体系列
+            一个特定的字体系列，如Times,Courier
+    Serif字体中字符在行的末端在额外的装饰
+    Sans-serif sans指无-这些字体在末端没有额外的装饰，在计算机中能更好地阅读
+    monospace 所有的等宽字符具有相同的宽度
+
+    字体系列
+        font-family设置文本的字体系列
+        font-family属性应该设置几个字体名称作为一种后备机制，浏览器如果不识别第一个，它会尝试识别后备
+        如果字体系列的名称超过一个字，它必须使用引号，多个字体系列使用逗号分隔
+        如 font-family:"Times New Roman",Times,serif
+    字体样式
+        font-style:
+            normal
+            italic 斜体
+            oblique 倾斜的文字
+    字体大小
+        font-size:
+            单位是px,em
+            其中em代表当前字体大小，在浏览器中默认的文字大小是16px
+        在所有的浏览器的解决方案中，设置body元素的默认字体大小是100%，其他使用em
+        这样在所有的浏览器中，可以显示相同的文本大小，并允许所有浏览器绽放文本的大小
+    字体粗细
+        font-weight
+            normal
+            lighter
+            bold
+            number
+    字体转变
+        font-variant
+            normal
+            small-caps
+    简写
+        font:font-style,font-weight,font-size,font-family
+
+链接
+    a:link-正常，未访问过的链接
+    a:visited-用户已访问过的链接
+    a:hover-当用户鼠标放在链接上时
+    a:active-链接被点击的那一刻
+列表
+    list-style 简写属性，将所有设置放在一个声明中，顺序为type,position,image
+    list-style-image 将图像设置为列表项标志
+
+    list-style-position 设置列表项中标志的位置
+    list-style-type 设置列表项标志的类型
+        none,circle,square,upper-roman,lower-alpha
+    为了解决浏览器显示不一致的问题，解决方案是ul、ol设置为list-style-type:none
+    然后对内部的li统一设置
+表格
+    边框
+        border:1px solid black;
+    折叠边框-上面会将表格显示为双边框，是因为将th/td元素有独立的边框
+        为了解决这个问题，使用border-collapse
+        border-collapse:collapse
+    宽度、高度
+        width
+        height
+        参数可以是%，也可以是px,em
+    表格的文字对齐
+        text-align:left,right,center
+        vertical-align:top,center,bottom
+    表格填充
+        padding-在表的内容中控制表格之间的边框
+    表格颜色
+        字体颜色 color
+        背景颜色 background-color
+    定位表格标题的位置
+        caption-side: bottom/top
+盒子模型
+    margin-外边距，清除边框外的区域，外边距是透明的
+    border-边框，围绕在内边距和内容外的边框
+    padding-内边距，清除内容周围的区域，内边距是透明的
+    content-盒子的内容，显示文本和图像
+    元素的内容和宽度
+        当指定一个css元素的宽度和高度时，我们只是设置内容区域的宽度和高度。
+        如果要完全指定元素的大小，我们还要添加填充，边框和边距
+边框
+    可以指定元素边框的样式和颜色
+    边框样式 border-style
+        none-默认无边框
+        dotted-定义一个点线边框
+        dashed-定义一个虚线边框
+        solid-定义实绩边框
+        double-定义两个边框
+        groove-定义3d沟槽边框，效果取决于边框的颜色值
+        ridge-定义3d脊边框，效果取决于边框的颜色值
+        inset-定义一个3d嵌入边框，效果取决于边框的颜色值
+        outset-定义一个3d突出边框，效果取决于边框的颜色值
+    边框宽度：border-width
+        可以指定具体值
+
+    边框颜色 border-color
+        name,rgb,hex
+    边框-单独设置各边
+        border-top-style
+    简写
+        border-width border-style border-color
+CSS轮廓
+    outline-绘制在元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用
+    outline不占空间
+    outline-style,outline-color,outline-width
+    简写时顺序是：color,style,width
+外边距
+    margin
+    margin-top,margin-left,margin-right,margin-bottom
+    属性值：auto,length,%(相对父元素)
+内边距
+    padding
+尺寸
+    height
+    line-height
+    max-height
+    max-width
+    min-height
+    min-width
+    width
+可见性
+    visibility:hidden/display:none 隐藏
+    两者的区别在于，前者虽然隐藏了，但是还占用未隐藏一样的空间，影响布局
+    后者则不占空间
+    display:none,inline,block,inline-block
+    块级元素可以修改宽高度内外边距，内联元素不可以
+定位
+    position:static,relative,fixed,absolute,sticky
+        static:静态定位，默认值，不会受到left,top等影响
+        fixed:相对于浏览器窗口不动,与文档流无关，不占空间
+        relative：相对它正常位置，占用空间不变
+        absolute:相对于最近的已定位的父元素，如果没有，则相对于html
+布局-overflow控制内容溢出元素框时显示的方式
+    visible-默认值，内容不会被修剪，会呈现在元素框之外
+    hidden-内容会被修剪，并且其余内容是不可见的
+    scroll-内容会被修剪，但是浏览器会显示滚动条以供查看其余的内容
+    auto-如果内容会被修剪，浏览器会显示滚动条以供查看其余内容
+    inherit
+    注意：overflow 只工作在指定高度的块级元素上
+浮动float-会使元素向左或向右移动，其周围的元素也会重新排列
+    浮动往往用于图像，但是在布局中也一样很有用
+    清除浮动，使用clear,clear属性指定元素两侧不能出现浮动元素
+    clear:left,right,both,none,inherit
+    float:left,right,none,inherit
+对齐
+    水平对齐：margin:auto,前提是设置width
+    文本居中对齐：text-align:center
+    图片居中对齐：margin:auto
+    左右对齐：使用position:absolute
+        使用absolute会从正常的文件流中删除，并且可以重叠
+        为了避免在不同的浏览器显示的不同，需要设置body元素的margin，padding
+    左右对齐：使用float
+        在对齐元素时，对body的margin,padding进行预定义是个好主意，这样可以避免不同的浏览器中出现的差异
+        在父元素添加overflow:auto属性可解决子元素设置浮动且高度比父元素高而出现的溢出问题
+        ie8以以前在使用float时，会在右侧添加17px的外边距
+    垂直对齐：使用padding
+            使用line-height（与height相同）
+            上面两种都是针对单行文本，多行文本则使用下面的
+            vertical-align:middle
+组合选择器
+    后代选择器-以空格分隔（可多个）
+    子元素选择器-以大于号分隔（1个）
+    相邻兄弟选择器-以+号分隔（1个）
+    普通兄弟选择器-以破折号分隔（可多个）
+伪类-用来添加一些选择器的特殊效果
+    如a:link,a:visited,a:hover,a:active
+    伪类和css类可以组合，如a.red:visited
+    css:first-child伪类-选择父元素的第一个子元素
+        如p:first-child -指匹配作为任何元素的第一子元素p
+        p>i:first-child-匹配所有p元素的第一个i元素
+        p:first-child i-匹配所有作为元素的第一个子元素p中的所有i元素
+    所有css伪类
+        :checked-input:checked选择所有选中的表单元素
+        :disabled-input:disabled选择所有禁用的表单元素
+        :empty-p:empty选择所有没有子元素的p元素
+        :enabled-input:enabled选择所有启用的表单元素
+        :first-of-type--p:first-of-type选择的每个p元素是是其父元素的第一个p元素
+        :in-range
+        :invalid-input:invalid选择所有无效的元素
+        :last-child
+        :required
+        :before
+        :after
+        :focus
+伪元素
+    :first-line
+    :first-letter
+    :before
+    :after
+    :first-child
+    :last-child
+
+属性选择器
+    纯属性：[attr]
+    属性和值：[attr=value]
+    属性和值（多值）：[attr~=value],[attr|=value]
+    表单样式 input[type="text"] input[type="button"]
+
+    value是完整单词类型的比较符号~=，|=
+    拼接字符串类型的比较符号*=，^=，$=
+    如：属性中包含value
+        包含独立的单词value 如[title~=flower]
+        属性中做字符拆分，只要能拆出vaLue即可，[title*=flower]
+    属性以value开头
+        属性中必须是完整唯一的单词，或以-分隔 [lang|=en]
+        属性的前几个字母是value就可以 [lang^=en]
+    属性以value结尾
+        [src$=".pdf"]
+
+
+
+计数器
+    属性：
+        content 使用::after,::before伪元素来插入自动生成的内容
+        counter-increment 递增一个或多个值
+        counter-reset 创建一个或多个计数器
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H5新的表单元素</title>
+</head>
+<body>
+<form action="rec.html" method="get">
+    <input list="browsers" name="brower"> <!-- list属性绑定datalist -->
+    <datalist id="browsers">
+        <option value="Internet Explorer"></option>
+        <option value="Firefox"></option>
+        <option value="Chrome"></option>
+        <option value="Opera"></option>
+        <option value="Safari"></option>
+    </datalist>
+
+    用户名：<input type="text" name="usr_name" autofocus>
+    加密 <keygen name="security"/>
+
+
+    <input type="submit">
+</form>
+
+<br>
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    0 <input type="range" id="a" value="50">100
+    + <input type="number" id="b" value="50">
+    = <output name="x" for="a b"></output>
+
+</form>
+
+</body>
+</html>

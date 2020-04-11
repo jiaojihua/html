@@ -1,0 +1,16 @@
+Audio音频播放标签
+    controls属性供添加播放、暂停和音量控件
+    在audio标签中间你需要添加浏览器不支持audio元素时的提示文本
+    audio元素允许使用多个source元素，source可以链接不同的音频文件，浏览器
+    使用第一个支持的音频文件
+
+音频格式与浏览器的支持
+    mp3格式所有的浏览器都支持，wav ie外都支持，ogg则ie和safari都不支持
+
+音频格式的MIMe类型
+mp3==audio/mpeg
+ogg==audio/ogg
+wav==audio/wav
+
+<audio> 定义了声音内容
+<source> 规定了多媒体资源，可以是多个，在上面的标签中使用

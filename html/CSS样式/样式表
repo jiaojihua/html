@@ -1,0 +1,17 @@
+CSS在html4开始使用，其目的是为了更好的渲染html元素
+CSS样式表有三种用法：
+    内联样式-在元素中使用style属性
+    文档内样式表-在html头部区域使用style元素包含css
+    外部样式表-使用外部css
+    注：最好的方式是外部引用css文件
+常用样式实例
+    background-color： 背景颜色
+    font-family：字体，color:颜色，font-size:字体大小
+    text-align-文字对齐方式
+已废弃的标签和属性
+    不建议使用的标签有font,center,strike
+    不建议使用的属性有color,bgcolor
+
+对大部分标签，无论使用内联还是外引两种方式都是可以的
+但是某些标签确无法通过修改父级标签来改变子级标签特性，如a标签，修改其颜色特性，必须直接修改
+a标签的特性才可以

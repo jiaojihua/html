@@ -1,0 +1,23 @@
+WebSocket是h5开始提供的一种在单个TCP协议上进行全双工通讯的协议
+WebSocket使得客户端和服务端之间的数据交换变得更加简单，允许服务端主动向客户端推送消息
+
+WebSocket属性
+    Socket.readyState:
+        只读属性表示连接状态
+        0-连接未建立
+        1-连接已建立，可以进行通信
+        2-连接正在进行关闭
+        3-连接已关闭或连接不能打开
+    Socket.bufferedAmount
+        只读属性
+        已被send()放入正在队列中等待传输，但是还没有发出的utf8文本字节数
+
+WebSocket事件
+    open-Socket.onopen 连接建立时触发
+    message-Socket.onmessage 客户端接收服务端数据时触发
+    error-Socket.onerror 通信发生错误时触发
+    close-Socket.onclose 连接关闭时触发
+
+WebSocket的方法
+    Socket.send() 使用连接发送数据
+    Socket.close() 关闭连接

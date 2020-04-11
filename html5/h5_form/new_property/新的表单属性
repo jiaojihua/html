@@ -1,0 +1,22 @@
+form 新属性
+    autocomplete 此属性规定form或input域应该拥有自动完成功能 autocomplete="on/off"
+    novalidate 布尔类型属性，此属性规定在提交表单时不应该验证form或input域
+
+input 新属性
+    autocomplete
+    autofocus boolean属性，此属性规定在页面加载时，域自动获得焦点
+    form 此属性元宝输入域所属的一个呀多个表单，如果引用一个以上表单，使用空格分隔表单列表（针对表单外input字段）
+    formaction 此属性用于描述表单提交的url地址，此属性会覆盖form元素中的action属性，此属性用于type为submit、image
+    formenctype 此属性描述了表单提交到服务器的数据编码（只对form表单中method=post表单），此属性覆盖form元素的enctype属性
+        与type=submit,type=image配合使用
+    formmethod 此属性定义了表单提交的方式，覆盖了form元素的methon属性，该属性可以与type=submit，image配合使用
+    formvovalidate 此属性是boolean属性，描述了input元素在表单提交时无需被验证，覆盖form元素的novalidate属性，与type=submit配合使用
+    formtarget 此属性指定一个名称或一个关键字来指明表单提交数据接收后的展示，覆盖form元素的target属性，此属性与type=submit,image配合使用
+    height与width 此属性规定用于image类型的input标签的图像高度和宽度
+    list 此属性规定输入域的datalist
+    min与max 此属性用于为包含数字或日期的input类型规定限定约束，适用类型为date pickers,number,range
+    multiple 这是一个boolean值，规定input元素中可以选择多个值，适用的类型为email,file
+    pattern 此属性描述了一个正则表达式用于验证input元素的值
+    placeholder 提供一种提示，描述输入域所期待的值，简短的提示在用户输入值前会显示在输入域上
+    required 布尔属性，规定在提交之前必须填写输入域
+    step 规定输入域合法的数字间隔，可以与min,max属性创建一个区域值
