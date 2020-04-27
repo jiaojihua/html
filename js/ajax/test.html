@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX TEST</title>
+    <script src="../jquery/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $("#div1").load("abc.txt #p1");
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div1"><h2>使用jQuery AJAX修改文本内容 </h2></div>
+<button>获取外部内容</button>
+</body>
+</html>

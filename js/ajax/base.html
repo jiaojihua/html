@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax基本</title>
+    <script>
+        function showInfo(){
+        var xmlhttp;
+        if(window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+        }else{
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange=function(){
+
+            if(xmlhttp.readState==4 && xmlhttp.status==200){
+                document.getElementById("info").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","abc.txt",true);
+        xmlhttp.send();
+        console.info(xmlhttp)
+        }
+    </script>
+</head>
+<body>
+<button type="button" onclick="showInfo()">点击我看看</button>
+<p id="info">这里有一些文字</p>
+</body>
+</html>
