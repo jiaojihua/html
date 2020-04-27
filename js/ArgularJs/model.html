@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJs 模型</title>
+    <!-- ng-model指令基于它们的状态为html元素提供了css类 -->
+    <style>
+        input.ng-invalid{
+            font-weight: bold;
+        }
+        input.dirty{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<!-- 模型的作用是将数据绑定到HTML中 -->
+<div data-ng-app="myApp" data-ng-controller="myCtrl">
+    <label for="name">名字：</label>
+    <input type="text" data-ng-model="name" id="name">
+    <!-- 双向绑定，在修改输入域的值时，angularJS属性的值也发生了改变  -->
+    <h1>你输入的名字是：{{name}}</h1>
+    <form action="" name="myForm" >
+        <label for="email">邮箱：</label>
+        <input type="email" data-ng-model="text" id="email" name="email">
+        <!-- 显示用户输入错误时提示信息 -->
+        <span data-ng-show="myForm.email.$error.email">不是合法的邮箱地址</span>
+        <!-- 应用状态显示 -->
+        <h1>状态</h1>
+        是否合法：{{myForm.email.$valid}} <br>
+        是否修改过：{{myForm.email.$dirty}}<br>
+        是否触屏：{{myForm.email.$touched}}<br>
+    </form>
+</div>
+<script>
+    var  app = angular.module('myApp',[]);
+    //$scope作用域，视图与控制器的连接器，表示模型
+    app.controller('myCtrl',function($scope){
+        $scope.name = '焦计划';
+    });
+
+</script>
+</body>
+</html>

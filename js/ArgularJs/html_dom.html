@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJS HMTL DOM</title>
+</head>
+<body>
+<div data-ng-app="" data-ng-init="mySwitch=true">
+    <!-- 绑定应用程序数据到disabled属性 -->
+    <p><button data-ng-disabled="mySwitch">点我</button></p>
+    <!-- 绑定mySwitch到HMTL input checkbox元素的内容  -->
+    <p><input type="checkbox" data-ng-model="mySwitch">按钮</p>
+    <p>{{mySwitch}}</p>
+    <hr>
+    <p data-ng-show="true">我是可见的</p>
+    <p data-ng-show="false">我是不可见的</p>
+    <p data-ng-hide="false">我是可见的</p>
+    <p data-ng-hide="true">我是不可见的</p>
+</div>
+
+</body>
+</html>

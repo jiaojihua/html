@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJS 表单</title>
+</head>
+<body data-ng-app="">
+<!-- 单选框 -->
+    <form action="">
+        选择一个选项：
+        <input type="radio" data-ng-model="myVar" value="dogs">Dogs
+        <input type="radio"  data-ng-model="myVar" value="tuts">Tutorials
+        <input type="radio" data-ng-model="myVar" value="cars">Cars
+        <br>
+        选择一个选项：
+        <select data-ng-model="myVar" data-ng-options="x for x in ['dogs','tuts','cars']"></select>
+    </form>
+    <p>{{myVar}}</p>
+    <div data-ng-switch="myVar">
+        <div data-ng-switch-when="dogs">
+            <h1>Dogs</h1>
+            <p>Welcome to a world of dogs.</p>
+        </div>
+        <div data-ng-switch-when="tuts">
+            <h1>Tutorials</h1>
+            <p>Learn from examples.</p>
+        </div>
+        <div data-ng-switch-when="cars">
+            <h1>Cars</h1>
+            <p>Read about cars.</p>
+        </div>
+
+    </div>
+</body>
+</html>

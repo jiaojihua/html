@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJS模块</title>
+</head>
+<body>
+<!-- 自定义指令 -->
+<div data-ng-app="myApp" data-ng-controller="myCtrl">
+    <runoob-directive></runoob-directive>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.directive('runoobDirective',function () {
+        return{
+            template:'我在指令构造器中构造'
+        }
+    })
+</script>
+</body>
+</html>

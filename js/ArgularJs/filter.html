@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>Angular过滤器</title>
+</head>
+<body>
+<div data-ng-app="myApp" data-ng-controller="personCtrl">
+<!-- 表达式中添加过滤器 -->
+    <p>姓名为：{{lastName|uppercase}}</p>
+    <p>姓名为：{{lastName|lowercase}}</p>
+    <p>总价为：{{(quantity*price)|currency}}</p>
+    <!-- 指令中添加过滤器 -->
+    <input type="text" data-ng-model="test">
+    <ul>
+        <li data-ng-repeat="x in names|filter:test|orderBy:'country'">
+            {{x.name+','+x.country}}
+        </li>
+    </ul>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('personCtrl',function ($scope) {
+        $scope.lastName = 'Zhong Nanshan';
+        $scope.quantity = 12;
+        $scope.price=5;
+        $scope.names=[
+            {'name':'张三','country':'中国'},
+            {'name':'John','country':'America'},
+            {'name':'山夫一郎','country':'Japan'}
+        ];
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJS事件</title>
+</head>
+<body>
+<div data-ng-app="myApp" data-ng-controller="myCtrl">
+    <button data-ng-click="count=count+1">点我</button>
+    <p>{{count}}</p>
+    <button data-ng-click="toggle()">隐藏/显示</button>
+    <p data-ng-hide="myVar">
+        名：<input type="text" data-ng-model="firstName"><br>
+        姓：<input type="text" data-ng-model="lastName"><br>
+        姓名：{{firstName+' ' + lastName}}
+    </p>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope) {
+        $scope.count=0;
+        $scope.firstName='John';
+        $scope.lastName='Doe';
+        $scope.myVar=false;
+        $scope.toggle=function () {
+            $scope.myVar = !$scope.myVar;
+        }
+    });
+
+</script>
+</body>
+</html>

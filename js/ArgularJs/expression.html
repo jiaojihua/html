@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+    <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>表达式</title>
+</head>
+<body>
+<div data-ng-app="" data-ng-init="quantity=1;price=5;firstName='John';lastName='Doe';person={firstName:'John',lastName:'Doe'};points=[1,3,6,3,7]">
+<!-- 数字表达式 -->
+    <p>总价：{{quantity*price}}</p>
+    <p>总价：<span data-ng-bind="quantity*price"></span></p>
+    <!-- 字符串表达式 -->
+    <p>姓名：<span data-ng-bind="firstName+' '+lastName"></span></p>
+    <!-- 对象表达式 -->
+    <p>姓名：{{person.firstName+' '+person.lastName}}</p>
+    <!-- 数组表达式 -->
+    <p>第三个数为：{{points[2]}}</p>
+</div>
+</body>
+</html>

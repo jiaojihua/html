@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>AngularJS $http服务</title>
+</head>
+<body>
+<div data-ng-app="myApp" data-ng-controller="myCtrl">
+    <ul>
+        <li data-ng-repeat="site in sites">
+            {{site.Name+' '+site.Url+' '+site.Country}}
+        </li>
+    </ul>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope,$http) {
+        $http.get('./sites.json').then(function (response) {
+            $scope.sites = response.data.sites
+        });
+    });
+</script>
+</body>
+</html>

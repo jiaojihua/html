@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>Scope作用域</title>
+</head>
+<body>
+<!-- 将scope对象当作一个参数传递 -->
+<div data-ng-app="myApp" >
+    <div data-ng-controller="myCtrl">
+        <h1>{{carname}}</h1>
+        <input type="text" data-ng-model="name">
+        <h1>{{greeting}}</h1>
+        <button data-ng-click="sayHello()">点我</button>
+    </div>
+    <div data-ng-controller="myCtrl2">
+        <p>我有一辆车，它是{{carname}}</p>
+    </div>
+
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope,$rootScope) {
+        $rootScope.carname='Volvo';
+        $scope.name='Runoob';
+        $scope.sayHello=function () {
+            $scope.greeting='Hello'+$scope.name+'!';
+        }
+    });
+    app.controller('myCtrl2',function () {
+
+    });
+</script>
+</body>
+</html>

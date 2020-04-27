@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+    <title>Angular服务</title>
+</head>
+<body>
+<div data-ng-app="myApp" data-ng-controller="myCtrl">
+    <p>时间：{{theTime}}</p>
+    <p>{{message}}</p>
+    <h1>{{header}}</h1>
+</div>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function ($scope,$http,$timeout,$interval) {
+        $http.get('./abc.txt').then(function (response) {
+            $scope.message = response.data;
+        });
+        $scope.header="Hello World!!";
+
+        $timeout(function () {
+            $scope.header="How are you today?";
+        },2000);
+        $scope.theTime= new Date().toLocaleTimeString();
+        $interval(function () {
+            $scope.theTime=new Date().toLocaleTimeString();
+        },1000);
+    });
+</script>
+</body>
+</html>
